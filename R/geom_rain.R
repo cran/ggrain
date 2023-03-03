@@ -10,6 +10,7 @@
 #' @param cov A covariate to color the dots by - must be as a string (e.g., "cov")
 #' @param rain.side How you want the rainclouds displayed, right ("r"), left ("l") or flanking ("f"), for a 1-by-1 flanking raincloud use ("f1x1") and for a 2-by-2 use ("f2x2").
 #' @param likert Currently developing, right now just addes y-jitter.
+#' @param seed For the jittering in point & line to match. 
 #' @param point.args A list of args for the dots
 #' @param point.args.pos A list of positional args for the points
 #' @param line.args A list of args for the lines, you need to specify a group to connect them with id.long.var
@@ -83,6 +84,7 @@ geom_rain <- function(mapping = NULL,
                       cov = NULL, # should dots be colored due to a covariate?
                       rain.side = NULL, # The side to draw the violin/boxplot. "l" for left, "r" for right, "f" for flanking, defaults to "r"
                       likert = FALSE, #make sure you don't need to do more in the long for loop area
+                      seed = 42, # for the jittering in point & line to match
                       # rain.center = NULL, currently not implimented
                       ...,
                       point.args = rlang::list2(
@@ -92,7 +94,8 @@ geom_rain <- function(mapping = NULL,
                       point.args.pos = rlang::list2(
                         position = position_jitter(
                           width = .04,
-                          height = 0)
+                          height = 0,
+                          seed = seed)
                       ),
                       line.args = rlang::list2(
                         alpha = .2,
@@ -101,7 +104,8 @@ geom_rain <- function(mapping = NULL,
                       line.args.pos = rlang::list2(
                         position = position_jitter(
                           width = .04,
-                          height = 0),
+                          height = 0,
+                          seed = seed),
                       ),
                       boxplot.args =  rlang::list2(
                         outlier.shape = NA,
