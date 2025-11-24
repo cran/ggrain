@@ -2,8 +2,10 @@
 
 [![R-CMD-check](https://github.com/njudd/ggrain/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/njudd/ggrain/actions/workflows/R-CMD-check.yaml)
 [![Bugs](https://img.shields.io/github/issues/njudd/ggrain/bug?label=Bugs&logo=github&logoColor=%23FFF&color=brightgreen)](https://github.com/njudd/ggrain/issues?q=is%3Aopen+is%3Aissue)
-[![CRAN_Release_Badge](http://www.r-pkg.org/badges/version-ago/ggrain)](https://CRAN.R-project.org/package=ggrain)
-[![CRAN_Download_Badge](http://cranlogs.r-pkg.org/badges/grand-total/ggrain)](https://CRAN.R-project.org/package=ggrain)
+![CRAN/METACRAN Version](https://img.shields.io/cran/v/ggrain)
+<!---[[CRAN_Release_Badge](http://cranlogs.r-pkg.org/badges/version-ago/ggrain)](https://CRAN.R-project.org/package=ggrain)-->
+[![CRAN_Download_Badge](https://cranlogs.r-pkg.org/badges/ggrain)](https://CRAN.R-project.org/package=ggrain)
+[![total](https://cranlogs.r-pkg.org/badges/grand-total/ggrain)](https://cranlogs.r-pkg.org/)
 [![](http://cranlogs.r-pkg.org/badges/ggrain)](https://cran.r-project.org/package=ggrain)
 [![Vignette](https://img.shields.io/badge/Vignette-ggrain-orange.svg?colorB=E91E63)](https://www.njudd.com/raincloud-ggrain/)
 [![](https://img.shields.io/badge/Raincloudplots-shinyapps.io-blue?style=flat&labelColor=white&logo=RStudio&logoColor=blue)](https://lcdlab.shinyapps.io/raincloudplots-shiny/)
@@ -17,6 +19,19 @@
 - Connect longitudinal observations
 - Handles Likert data
 - Allows mapping of a covariate.
+
+### Citation
+
+[`ggrain`](https://www.njudd.com/raincloud-ggrain/) was developed by [`Nicholas Judd`](https://www.njudd.com), [`Jordy van Langen`](https://github.com/jorvlan), Micah Allen, and [`Rogier Kievit`](https://lifespancognitivedynamics.com/). 
+
+<pre>
+- Judd, N., van Langen, J., Allen, M., & Kievit, R.A.
+    <i>ggrain: A Rainclouds Geom for 'ggplot2'.</i>
+    R package version 0.0.4.
+    <b>CRAN</b> 2023, https://doi.org/10.32614/CRAN.package.ggrain,
+    <a href="https://CRAN.R-project.org/package=ggrain">https://CRAN.R-project.org/package=ggrain</a>
+</pre>
+
 	
 ### Example 
 
@@ -88,17 +103,31 @@ Position-related arguments (e.g., jittering, nudging & width) can be passed with
 We warmly welcome all contributions. 
 You can open an issue or make a pull request if you would like to add something new!
 
-### Citation
-
-[`ggrain`](https://github.com/njudd/ggrain) was developed by Nicholas Judd, Jordy van Langen, Micah Allen, and Rogier Kievit. 
-
+### Scientific papers that used & cited 👏 `ggrain`
 <pre>
-- Judd, N., van Langen, J., Allen, M., & Kievit, R.A.
-    <i>ggrain: A Rainclouds Geom for 'ggplot2'.</i>
-    R package version 0.0.3.
-    <b>CRAN</b> 2023,
-    <a href="https://CRAN.R-project.org/package=ggrain">https://CRAN.R-project.org/package=ggrain</a>
-</pre>
+<b>*</b> Robison, M. K., Celaya, X., Ball, B. H., & Brewer, G. A. (2024). 
+    Task sequencing does not systematically affect the factor structure of cognitive abilities. 
+    <b>Psychonomic Bulletin & Review, 31(2), 670-685.</b>
+    <a href="https://doi.org/10.3758/s13423-023-02369-0">https://doi.org/10.3758/s13423-023-02369-0</a>
+<b>*</b> Han, C., Danzeng, Q., Li, L., Bai, S., & Zheng, C. (2024). 
+    Machine learning reveals PANoptosis as a potential reporter and 
+    prognostic revealer of tumour microenvironment in lung adenocarcinoma. 
+    <b>The Journal of Gene Medicine, 26(1), e3599.</b>
+    <a href="https://doi.org/10.1002/jgm.3599">https://doi.org/10.1002/jgm.3599</a>
+<b>*</b> Jiang, S., Shang, W. Z., Cui, J. Y., Yan, Y. Y., Yang, T., Hu, Y., ... & Wu, B. (2023). 
+    Prevalence and Predictors of Hemorrhagic Foci on Long-term 
+    Follow-up MRI of Recent Single Subcortical Infarcts. 
+    <b>Translational Stroke Research, 1-11.</b>
+    <a href="https://doi.org/10.1007/s12975-023-01224-7">https://doi.org/10.1007/s12975-023-01224-7</a>
+<b>*</b> Senftleben, U., Schoemann, M., & Scherbaum, S. (2024). 
+    Choice repetition bias in intertemporal choice: An eye-tracking study.
+    <b>OSF (Open Science Framework) / PsyArXiv.</b>
+    <a href="https://doi.org/10.31234/osf.io/g3v9m">https://doi.org/10.31234/osf.io/g3v9m</a>
+<b>*</b> Bognar, M., Gyurkovics, M., Aczel, B., & van Steenbergen, H. (2023).
+    The curve of control: Non-monotonic effects of task difficulty on cognitive control.
+    <b>PsyArXiv</b>
+    <a href="https://doi.org/10.31234/osf.io/ywup9">https://doi.org/10.31234/osf.io/ywup9</a>
+</pre>	
 
 ### Funding
 <img src="https://github.com/njudd/ggrain/blob/main/inst/git_pics/nwo_openscience.jpg" width="150" height="160" align="right"/>

@@ -115,9 +115,9 @@ ggplot(iris.long[iris.long$time %in% c('t1', 't2'),], aes(time, Sepal.Width, fil
                 position = ggpp::position_dodgenudge(width = .1, #width needed now in ggpp version 0.5.g
                   x = c(-.13, -.13, # pre versicolor, pre virginica
                         .13, .13))), # post; post
-            violin.args.pos = list(width = .7,
-             position = position_nudge(x = c(rep(-.2, 256*2), rep(-.2, 256*2),# pre; pre
-                                             rep(.2, 256*2), rep(.2, 256*2))))) + #post; post
+            violin.args.pos = list(width = .7, quantiles = NULL,
+             position = position_nudge(x = c(rep(-.2, 512), rep(-.2, 512),# pre; pre
+                                             rep(.2, 512), rep(.2, 512))))) + #post; post
   theme_classic() +
   scale_fill_manual(values=c("dodgerblue", "darkorange")) +
   guides(fill = 'none', color = 'none')
@@ -149,9 +149,9 @@ ggplot(iris.long, aes(time, Sepal.Width, fill = Species)) +
                                                         -.13, .13, 
                                                          .13, .13))),
             violin.args.pos = list(width = .7,
-             position = position_nudge(x = c(rep(-.2, 256*2), rep(-.2, 256*2),# t1
-                                             rep(-.2, 256*2), rep(.2, 256*2), # t2
-                                             rep(.2, 256*2), rep(.2, 256*2))))) +
+             position = position_nudge(x = c(rep(-.2, 512), rep(-.2, 512),# t1
+                                             rep(-.2, 512), rep(.2, 512), # t2
+                                             rep(.2, 512), rep(.2, 512))))) +
   theme_classic() +
   scale_fill_manual(values=c("dodgerblue", "darkorange")) +
   scale_color_viridis_c(option =  "A", direction = -1) +
@@ -169,11 +169,11 @@ ggplot(iris.long[iris.long$time %in% c('t1', 't2'),], aes(time, Sepal.Width, fil
   guides(fill = 'none', color = 'none')
 
 ## ----rainclouds sig, eval = F, echo = T---------------------------------------
-#  ggplot(iris.long[iris.long$Species == 'versicolor' & iris.long$time %in% c('t1', 't2'),], aes(time, Sepal.Width, fill = Species)) +
-#    geom_rain(alpha = .5, rain.side = 'f1x1') +
-#   ggsignif::geom_signif(
-#    comparisons = list(c("t1", "t2")),
-#    map_signif_level = TRUE) +
-#  scale_fill_manual(values=c("darkorange", "darkorange")) +
-#  theme_classic()
+# ggplot(iris.long[iris.long$Species == 'versicolor' & iris.long$time %in% c('t1', 't2'),], aes(time, Sepal.Width, fill = Species)) +
+#   geom_rain(alpha = .5, rain.side = 'f1x1') +
+#  ggsignif::geom_signif(
+#   comparisons = list(c("t1", "t2")),
+#   map_signif_level = TRUE) +
+# scale_fill_manual(values=c("darkorange", "darkorange")) +
+# theme_classic()
 

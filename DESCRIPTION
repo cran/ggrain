@@ -1,6 +1,6 @@
 Package: ggrain
 Title: A Rainclouds Geom for 'ggplot2'
-Version: 0.0.4
+Version: 0.1.0
 Authors@R: c(
     person("Nicholas", "Judd", , "nickkjudd@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-0196-9871")),
@@ -13,19 +13,20 @@ Authors@R: c(
 Description: The 'geom_rain()' function adds different geoms together using 'ggplot2' to create raincloud plots. 
 License: MIT + file LICENSE
 Encoding: UTF-8
-Depends: ggplot2 (>= 3.4.0), R (>= 3.4.0)
-Imports: grid, gghalves, ggpp (>= 0.5.6), rlang, vctrs (>= 0.5.0), cli
-RoxygenNote: 7.3.0
+Depends: ggplot2 (>= 4.0.0), R (>= 3.4.0)
+Imports: grid, ggpp (>= 0.5.6), rlang, vctrs (>= 0.5.0), cli
+RoxygenNote: 7.3.3
 URL: https://github.com/njudd/ggrain
 BugReports: https://github.com/njudd/ggrain/issues
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2024-01-23 10:46:27 UTC; njudd
-Author: Nicholas Judd [aut, cre] (<https://orcid.org/0000-0002-0196-9871>),
-  Jordy van Langen [aut] (<https://orcid.org/0000-0003-2504-2381>),
-  Micah Allen [ctb] (<https://orcid.org/0000-0001-9399-4179>),
-  Rogier Kievit [aut] (<https://orcid.org/0000-0003-0700-4568>)
+Packaged: 2025-11-24 17:14:57 UTC; niju9118
+Author: Nicholas Judd [aut, cre] (ORCID:
+    <https://orcid.org/0000-0002-0196-9871>),
+  Jordy van Langen [aut] (ORCID: <https://orcid.org/0000-0003-2504-2381>),
+  Micah Allen [ctb] (ORCID: <https://orcid.org/0000-0001-9399-4179>),
+  Rogier Kievit [aut] (ORCID: <https://orcid.org/0000-0003-0700-4568>)
 Maintainer: Nicholas Judd <nickkjudd@gmail.com>
 Repository: CRAN
-Date/Publication: 2024-01-23 11:50:02 UTC
+Date/Publication: 2025-11-24 17:30:02 UTC

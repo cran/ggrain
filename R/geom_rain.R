@@ -6,6 +6,7 @@
 #'
 #' @name geom_rain
 #' @inheritParams ggplot2::geom_boxplot
+#' @inheritParams ggplot2::geom_violin
 #' @param id.long.var A group to connect the lines by - must be a string (e.g., "id").
 #' @param cov A covariate to color the dots by - must be as a string (e.g., "cov")
 #' @param rain.side How you want the rainclouds displayed, right ("r"), left ("l") or flanking ("f"), for a 1-by-1 flanking raincloud use ("f1x1") and for a 2-by-2 use ("f2x2").
@@ -21,12 +22,11 @@
 #' @param violin.args.pos A list of positional args for the violin
 #' @return Returns a list of three environments to be used with the 'ggplot()' function in the 'ggplot2' package.
 #' @return If the id.long.var argument is used the output will be a list of 4 environments.
-#' @return These 4 environments have a similar structure to 'geom_boxplot()', 'geom_violin()', 'geom_point()' and 'geom_line()' from 'ggplot2'.
+#' @return These 4 environments have a similar structure to 'ggplot2::geom_boxplot()', 'ggplot2::geom_violin()', 'ggplot2::geom_point()' and 'ggplot2::geom_line()' from 'ggplot2'.
 #' need library(rlang)
 #' need library(ggplot2)
 #' depends = ggplot2
 #' @importFrom ggplot2 aes
-#' @importFrom gghalves geom_half_violin
 #' @importFrom rlang list2 sym !! !!! exec
 #' @importFrom ggpp position_dodgenudge
 #' @export
@@ -119,7 +119,7 @@ geom_rain <- function(mapping = NULL,
                         ...
                       ),
                       violin.args.pos = rlang::list2(
-                        side = "r", width = .7,
+                        side = "r", width = .7, quantiles = NULL, # putting this here as it breaks shit see github issue; https://github.com/njudd/ggrain/issues/16
                         position = position_nudge(x = .15),
                       )
 )
@@ -160,9 +160,9 @@ geom_rain <- function(mapping = NULL,
           width = .08,
           position = ggpp::position_dodgenudge(width = .08, x = c(-.1, -.1, .1, .1)))
         violin.args.pos <- rlang::list2(
-          width = .7,
-          position = position_nudge(x = c(rep(-.15, 256*2), rep(-.15, 256*2),
-                                          rep(.15, 256*2), rep(.15, 256*2))))
+          width = .7, quantiles = NULL,
+          position = position_nudge(x = c(rep(-.15, 512), rep(-.15, 512),
+                                          rep(.15, 512), rep(.15, 512))))
       }
     }
     else if (rain.side == "f1x1") {
@@ -170,17 +170,17 @@ geom_rain <- function(mapping = NULL,
         width = .08,
         position = ggpp::position_dodgenudge(width = .08, x = c(-.1, .1)))
       violin.args.pos <- rlang::list2(
-        width = .7,
-        position = position_nudge(x = c(rep(-.15, 256*2), rep(.15, 256*2))))
+        width = .7, quantiles = NULL,
+        position = position_nudge(x = c(rep(-.15, 512), rep(.15, 512))))
     }
     else if (rain.side == "f2x2") {
       boxplot.args.pos <- rlang::list2(
         width = .08,
         position = ggpp::position_dodgenudge(width = .08, x = c(-.1, -.1, .1, .1)))
       violin.args.pos <- rlang::list2(
-        width = .7,
-        position = position_nudge(x = c(rep(-.15, 256*2), rep(-.15, 256*2),
-                                        rep(.15, 256*2), rep(.15, 256*2))))
+        width = .7, quantiles = NULL,
+        position = position_nudge(x = c(rep(-.15, 512), rep(-.15, 512),
+                                        rep(.15, 512), rep(.15, 512))))
     } else
       stop("the rain.side arguement only accepts: \n 'l' for left \n 'r' for right \n 'f', 'f1x1', or 'f2x2' for flanking
            \n STOPPING", call. = FALSE)
@@ -268,7 +268,7 @@ geom_rain <- function(mapping = NULL,
     e4 <- rlang::exec(geom_paired_raincloud, inherit.aes = TRUE, !!!violin.args)
   }
   else {
-    e4 <- rlang::exec(gghalves::geom_half_violin, inherit.aes = TRUE, !!!violin.args)
+    e4 <- rlang::exec(geom_half_violin, inherit.aes = TRUE, !!!violin.args)
   }
 
   if (!is.null(id.long.var)){
@@ -280,7 +280,7 @@ geom_rain <- function(mapping = NULL,
     # you need false, but you need to take x & y with you!!!
 
     # https://github.com/tidyverse/ggplot2/issues/3535
-    # redoing geom_point with ordered data
+    # redoing ggplot2::geom_point with ordered data
     # I don't think this will work because data isn't passed
     # now it works but I need to pass the data arg
     # also the args are quite verbose, can you trim them down
@@ -298,15 +298,3 @@ geom_rain <- function(mapping = NULL,
     list(e4, e3, e1)
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-

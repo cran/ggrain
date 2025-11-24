@@ -9,7 +9,7 @@
 \item{na.rm}{If \code{FALSE}, the default, missing values are removed with
 a warning. If \code{TRUE}, missing values are silently removed.}
 
-\item{...}{Other arguments passed on to \code{\link[=layer]{layer()}}. These are
+\item{...}{Other arguments passed on to \code{\link[ggplot2:layer]{ggplot2::layer()}}. These are
 often aesthetics, used to set an aesthetic to a fixed value, like
 \code{colour = "red"} or \code{size = 3}. They may also be parameters
 to the paired geom/stat.}
@@ -18,8 +18,8 @@ to the paired geom/stat.}
 The point geom is used to create scatterplots. The scatterplot is most
 useful for displaying the relationship between two continuous variables.
 It can be used to compare one continuous and one categorical variable, or
-two categorical variables, but a variation like \code{\link[=geom_jitter]{geom_jitter()}},
-\code{\link[=geom_count]{geom_count()}}, or \code{\link[=geom_bin2d]{geom_bin2d()}} is usually more
+two categorical variables, but a variation like \code{\link[ggplot2:geom_jitter]{ggplot2::geom_jitter()}},
+\code{\link[ggplot2:geom_count]{ggplot2::geom_count()}}, or \code{\link[ggplot2:geom_bin_2d]{ggplot2::geom_bin2d()}} is usually more
 appropriate. A \emph{bubblechart} is a scatterplot with a third variable
 mapped to the size of points.
 }
@@ -30,29 +30,29 @@ you have more than a few points, points may be plotted on top of one
 another. This can severely distort the visual appearance of the plot.
 There is no one solution to this problem, but there are some techniques
 that can help. You can add additional information with
-\code{\link[=geom_smooth]{geom_smooth()}}, \code{\link[=geom_quantile]{geom_quantile()}} or
-\code{\link[=geom_density_2d]{geom_density_2d()}}. If you have few unique \code{x} values,
-\code{\link[=geom_boxplot]{geom_boxplot()}} may also be useful.
+\code{\link[ggplot2:geom_smooth]{ggplot2::geom_smooth()}}, \code{\link[ggplot2:geom_quantile]{ggplot2::geom_quantile()}} or
+\code{\link[ggplot2:geom_density_2d]{ggplot2::geom_density_2d()}}. If you have few unique \code{x} values,
+\code{\link[ggplot2:geom_boxplot]{ggplot2::geom_boxplot()}} may also be useful.
 
 Alternatively, you can
 summarise the number of points at each location and display that in some
-way, using \code{\link[=geom_count]{geom_count()}}, \code{\link[=geom_hex]{geom_hex()}}, or
-\code{\link[=geom_density2d]{geom_density2d()}}.
+way, using \code{\link[ggplot2:geom_count]{ggplot2::geom_count()}}, \code{\link[ggplot2:geom_hex]{ggplot2::geom_hex()}}, or
+\code{\link[ggplot2:geom_density_2d]{ggplot2::geom_density2d()}}.
 
 Another technique is to make the points transparent (e.g.
-\code{geom_point(alpha = 0.05)}) or very small (e.g.
-\code{geom_point(shape = ".")}).
+\verb{[ggplot2::geom_point(alpha = 0.05)]}) or very small (e.g.
+\verb{[ggplot2::geom_point(shape = ".")]}).
 }
 
 \examples{
 p <- ggplot(mtcars, aes(wt, mpg))
-p + geom_point()
+p + ggplot2::geom_point()
 
 # Add aesthetic mappings
-p + geom_point(aes(colour = factor(cyl)))
-p + geom_point(aes(shape = factor(cyl)))
+p + ggplot2::geom_point(aes(colour = factor(cyl)))
+p + ggplot2::geom_point(aes(shape = factor(cyl)))
 # A "bubblechart":
-p + geom_point(aes(size = qsec))
+p + ggplot2::geom_point(aes(size = qsec))
 
 # Set aesthetics to fixed value
 ggplot(mtcars, aes(wt, mpg)) + geom_point(colour = "red", size = 3)
@@ -60,9 +60,9 @@ ggplot(mtcars, aes(wt, mpg)) + geom_point(colour = "red", size = 3)
 \donttest{
 # Varying alpha is useful for large datasets
 d <- ggplot(diamonds, aes(carat, price))
-d + geom_point(alpha = 1/10)
-d + geom_point(alpha = 1/20)
-d + geom_point(alpha = 1/100)
+d + ggplot2::geom_point(alpha = 1/10)
+d + ggplot2::geom_point(alpha = 1/20)
+d + ggplot2::geom_point(alpha = 1/100)
 }
 
 # For shapes that have a border (like 21), you can colour the inside and
@@ -76,14 +76,14 @@ ggplot(mtcars, aes(wt, mpg)) +
 # different sizes
 p <- ggplot(mtcars, aes(mpg, wt, shape = factor(cyl)))
 p +
-  geom_point(aes(colour = factor(cyl)), size = 4) +
-  geom_point(colour = "grey90", size = 1.5)
+  ggplot2::geom_point(aes(colour = factor(cyl)), size = 4) +
+  ggplot2::geom_point(colour = "grey90", size = 1.5)
 p +
-  geom_point(colour = "black", size = 4.5) +
-  geom_point(colour = "pink", size = 4) +
-  geom_point(aes(shape = factor(cyl)))
+  ggplot2::geom_point(colour = "black", size = 4.5) +
+  ggplot2::geom_point(colour = "pink", size = 4) +
+  ggplot2::geom_point(aes(shape = factor(cyl)))
 
-# geom_point warns when missing values have been dropped from the data set
+# ggplot2::geom_point warns when missing values have been dropped from the data set
 # and not plotted, you can turn this off by setting na.rm = TRUE
 set.seed(1)
 mtcars2 <- transform(mtcars, mpg = ifelse(runif(32) < 0.2, NA, mpg))

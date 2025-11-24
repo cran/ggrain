@@ -5,7 +5,7 @@
 #'
 #' Create a paired raincloud plot (useful for visualizing difference between experimental conditions tested on the same subjects or items).
 #'
-#' Adopted from the geom_violinhalf() source code from the see package
+#' Adopted from the see::geom_violinhalf() source code from the see package
 #'
 #' @inheritParams ggplot2::layer
 #' @inheritParams ggplot2::geom_violin
@@ -82,11 +82,6 @@ GeomPairedRaincloud <-
               temp1[order(data$y) ,],
               temp2[order(data$y, decreasing = TRUE) ,]
             )
-
-            # newdata <- rbind(
-            #   dplyr::arrange(dplyr::mutate(data, x = .data$xminv), .data$y),
-            #   dplyr::arrange(dplyr::mutate(data, x = .data$xmaxv), dplyr::desc(.data$y))
-            # )
 
             newdata <- rbind(newdata, newdata[1,])
 
