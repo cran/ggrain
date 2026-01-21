@@ -1,14 +1,14 @@
-69ac4a06d032f41c866ebbccc7f3301e *DESCRIPTION
+2433bb47672e4092e6d0b86e891aa163 *DESCRIPTION
 35de9ecf3b85c707dae3d199b52de7a7 *LICENSE
 60be2a36d671953baac805d12b8e4bfe *NAMESPACE
-cd3e35539ef2923380ab9a1b951b8041 *NEWS.md
-afea6d576c2763df786604b046658d8d *R/geom-point-sorted.r
+03ec9413cf33f2b7a120ef9724983f3b *NEWS.md
+2ec3c9536b32d741c77887193a731e2e *R/geom-point-sorted.r
 312048f273f3f9f5c9208d1b520f9e70 *R/geom_half_violin.R
 8c4a14254be9dd37290aeaa472a22784 *R/geom_paired_raincloud.R
 b1a3e365b27eeca95e4e6dea7a288a59 *R/geom_rain.R
-de76696e85e955df19a48a05796ecfa4 *R/stat-half-ydensity.R
+e0d1cbbad761e7468af2e9e272f4e58d *R/stat-half-ydensity.R
 d4ea035e9835ae3b83f19d9b913ee5f2 *README.md
-f075b4d07811f3ceeb670110c63099f8 *build/vignette.rds
+339b8bd2460b9cafafd5bb1e3f4f4e4d *build/vignette.rds
 dfe122a5588f16175077b14cb8c8bb42 *inst/CITATION
 68b329da9893e34099c7d8ad5cb9c940 *inst/book.bib
 5af86166ee5397722a353ff6509ceb25 *inst/doc/ggrain.R
@@ -28,5 +28,5 @@ e942836c02213359f46fdb02bdb93a24 *inst/git_pics/time_group_cov_vin.png
 0a00715f55f4327e0033c265b4098ceb *man/geom_paired_raincloud.Rd
 32b3dd7d7866728664aa096b447cb823 *man/geom_rain.Rd
 af2bd8b29cae2150f1b961c60505faca *man/ggplot2-ggproto.Rd
-54b90328766eaf33b31195411f27ed98 *man/stat_half_ydensity.Rd
+76c17a10e93c147bfcf71d0e36541e9d *man/stat_half_ydensity.Rd
 8367423a6c7b03a27562ea33349a71fc *vignettes/ggrain.Rmd

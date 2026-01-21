@@ -124,6 +124,3 @@ the default plot specification, e.g. \code{\link[ggplot2:annotation_borders]{ann
 This is taken from gghalves great R package
 I am trying to remove the dependency
 }
-\seealso{
-\code{\link[gghalves:geom_half_violin]{gghalves::geom_half_violin()}} for examples.
-}
